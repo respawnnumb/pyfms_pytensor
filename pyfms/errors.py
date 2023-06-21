@@ -1,4 +1,4 @@
-from theano import tensor as T
+from pytensor import tensor as T
 
 from . import core
 
