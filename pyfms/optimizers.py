@@ -1,5 +1,5 @@
-import theano
-from theano import tensor as T
+import pytensor as theano
+from pytensor import tensor as T
 
 from . import core
 
