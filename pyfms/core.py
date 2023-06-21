@@ -12,10 +12,11 @@ import numpy.distutils
 blas_opt_info = getattr(np.distutils.__config__, 'blas_opt_info', None)
 if blas_opt_info is None:
     np.distutils.__config__.blas_opt_info = np.distutils.__config__.blas_ilp64_opt_info
-
-import theano
-from theano import sparse as S
-from theano import tensor as T
+    
+#By aliasing pytensor as Theano, you don't need to change the rest of your code.
+import pytensor as theano
+from pytensor import sparse as S
+from pytensor import tensor as T
 
 if blas_opt_info is None:
     delattr(np.distutils.__config__, 'blas_opt_info')
