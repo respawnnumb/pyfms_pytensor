@@ -9,4 +9,5 @@ class SquaredError(core.Error):
 
 class BinaryCrossEntropy(core.Error):
     def apply(self, y, y_hat):
-        return T.nnet.binary_crossentropy(y_hat, y)
+        #return T.nnet.binary_crossentropy(y_hat, y)
+        return -(y_hat * T.log(y) + (1.0 - y_hat) * T.log(1.0 - y))
